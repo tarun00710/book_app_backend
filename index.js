@@ -14,6 +14,9 @@ app.use(cors({
   credentials: true,
 }))
 
+app.get('/',(req,res)=>{
+  res.send("hello")
+})
 
 app.use(
   cookieSession({

@@ -12,9 +12,9 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   async(request, accessToken, refreshToken, profile, done) => {
+
     const currentUser = await User.findOne({googleID: profile.id})
         if(currentUser){
-            console.log('user is: ', currentUser);
             done(null, currentUser);
         } else {
             const newUser = new User({

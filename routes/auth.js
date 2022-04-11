@@ -18,6 +18,7 @@ router.get("/login/success", async(req, res)=>{
         console.log(error.message)
     }
 })
+
 router.get("/login/failed", (req, res)=>{
         res.status(401).json({
             success: false,
@@ -25,7 +26,7 @@ router.get("/login/failed", (req, res)=>{
         })
 });
 
-router.get("/logout", (req, res)=>{
+router.get("/logout", (req, res) => {
     req.logout();
     res.redirect("http://localhost:3000")
 });
