@@ -9,6 +9,9 @@ var cookieParser = require('cookie-parser')
 var session = require('express-session')
 
 
+
+const PORT = process.env.PORT || 5000
+
 app.use(cors({
   origin: "http://localhost:3000",
   credentials: true,
@@ -70,6 +73,6 @@ app.post('/user/:userId/savesearch',async(req,res) => {
   
 })
 
-app.listen("5000", () => {
+app.listen(PORT, () => {
   console.log("Server is running!");
 });
