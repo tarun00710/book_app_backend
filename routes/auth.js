@@ -28,13 +28,13 @@ router.get("/login/failed", (req, res)=>{
 
 router.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("http://localhost:3000")
+    res.redirect("https://bookfinder.netlify.app/")
 });
 
 router.get("/google", passport.authenticate("google", {scope: ["profile"]}));
 
 router.get("/google/callback", passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/search",
+    successRedirect: "https://bookfinder.netlify.app/search",
     failureRedirect: "/login/failure"
 }))
 
